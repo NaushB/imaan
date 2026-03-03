@@ -7,6 +7,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
+ .deer-bg {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: 80px;
+  z-index: 0;
+  opacity: 0.7;
+  pointer-events: none; /* This ensures it doesn't block buttons */
+}
 
   :root {
     --cream: #fdf6ee;
@@ -352,6 +361,7 @@
 </style>
 </head>
 <body>
+ <img src="deer.gif" class="deer-bg" alt="cute deer">
 
 <!-- Floating petals -->
 <div class="petal" style="left:8%;animation-duration:12s;animation-delay:0s;">🌸</div>
