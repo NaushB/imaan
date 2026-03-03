@@ -7,6 +7,26 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <style>
  /* --- Styling for the New Phone Deer Image --- */
+ /* --- Styling for the New Phone Deer Image --- */
+.phone-deer {
+  display: block;        /* Ensures it starts on a new line */
+  max-width: 150px;      /* Prevents it from getting too big on phones */
+  height: auto;          /* Maintains aspect ratio */
+  margin: 15px auto 0;   /* Centers it horizontally AND adds space above */
+  opacity: 1;            /* Keep at 1.0 if you want the photo to be clear */
+}
+
+.play-button-style {
+  background: var(--rose);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-family: 'Lora', serif;
+  cursor: pointer;
+  display: block;        /* Added this to help with centering */
+  margin: 0 auto;       /* Added this to center the button */
+}
 .phone-deer {
   display: block;        /* Ensures it starts on a new line */
   max-width: 150px;      /* Prevents it from getting too big on phones */
@@ -183,8 +203,8 @@
     margin-bottom: 8px;
   }
 
- <div class="music-section">
-  <p class="music-label">press play for the vibe (aka the Imaan radio station) 🎵</p>
+<div class="music-section">
+  <p class="music-label">press play for the vibe aka Imaan radio 🎵</p>
   
   <audio id="bg-music" loop>
     <source src="song.mp3" type="audio/mpeg">
@@ -194,7 +214,7 @@
     ▶ Play Song
   </button>
 
-  <img src="boombox.JPG" class="phone-deer" alt="Me asf rn">
+  <img src="boombox.JPG" class="phone-deer" alt="boombox">
 </div>
 
   .music-label {
