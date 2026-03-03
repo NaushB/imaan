@@ -16,6 +16,20 @@
   opacity: 0.7;
   pointer-events: none; /* This ensures it doesn't block buttons */
 }
+ .side-gif {
+  position: fixed;
+  left: 3%;
+  top: 40%;
+  width: 120px;
+  z-index: -1;
+  opacity: 0.5; /* Makes it "dreamy" rather than loud */
+  pointer-events: none;
+}
+
+/* This hides the GIF on small phone screens so it doesn't cover the text */
+@media (max-width: 800px) {
+  .side-gif { display: none; }
+}
 
   :root {
     --cream: #fdf6ee;
@@ -390,15 +404,30 @@
     <p class="hero-sub">brown excellence · a little itinerary for a little adventure · Markham, 2026</p>
     <p style="font-size:0.8rem;color:#b07080;font-style:italic;margin-top:-8px;margin-bottom:4px;">a Naush Butt experience™</p>
 
-    <!-- Apple Music embed -->
-    <div class="music-section">
-      <p class="music-label">🎵 the vibe — press play</p>
-      <div class="apple-embed">
-        <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="150" style="width:100%;overflow:hidden;border-radius:16px;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/ca/album/nomad/1744820135?i=1744820141"></iframe>
-      </div>
-    </div>
-  </div>
+    <!-- Music embed -->
+  <div class="music-section" style="text-align: center; margin-bottom: 20px;">
+  <p class="music-label">press play for the vibe 🎵</p>
+  <audio id="bg-music" loop>
+    <source src="song.mp3" type="audio/mpeg">
+  </audio>
+  <button id="play-btn" onclick="toggleMusic()" style="background: var(--rose); color: white; border: none; padding: 10px 20px; border-radius: 20px; font-family: 'Lora', serif; cursor: pointer;">
+    ▶ Play Song
+  </button>
+</div>
 
+<script>
+  function toggleMusic() {
+    var audio = document.getElementById('bg-music');
+    var btn = document.getElementById('play-btn');
+    if (audio.paused) {
+      audio.play();
+      btn.innerHTML = "⏸ Pause Song";
+    } else {
+      audio.pause();
+      btn.innerHTML = "▶ Play Song";
+    }
+  }
+</script>
   <div class="divider">· · ✦ · ·</div>
 
   <h2 class="itinerary-title">✨ The Plan ✨</h2>
@@ -411,7 +440,7 @@
       <div class="stop-body">
         <div class="stop-emoji">🏺</div>
         <div class="stop-name">Crafty Pots — pick up our pottery!</div>
-        <div class="stop-desc">We painted these and now they're ours forever. First stop, first treasure.</div>
+        <div class="stop-desc">We painted these and now they're ours or whatever. First stop, first treasure.</div>
         <div class="stop-address">126 Main Street Markham N, Markham, ON L3P 1Y1</div>
         <span class="map-btn">📍 Open in Maps</span>
       </div>
@@ -422,7 +451,7 @@
       <div class="stop-body">
         <div class="stop-emoji">🌯</div>
         <div class="stop-name">Tasty Shawarma</div>
-        <div class="stop-desc">Fuel up. We've got a long day of thrifting ahead and shawarma is the only correct answer.</div>
+        <div class="stop-desc">Fuel up. We've got a long day of thrifting ahead and shawarma is the only correct answer (plus you wanted it the other day).</div>
         <div class="stop-address">7677 Markham Rd #1, Markham, ON L3S 3J9</div>
         <span class="map-btn">📍 Open in Maps</span>
       </div>
@@ -433,7 +462,7 @@
       <div class="stop-body">
         <div class="stop-emoji">🛍️</div>
         <div class="stop-name">Value Village — thrift haul</div>
-        <div class="stop-desc">New fits, new finds. We are absolutely getting a radio alarm clock and something ridiculous.</div>
+        <div class="stop-desc">New fits, new finds. We're for sure getting a radio alarm clock or some ridiculous outfits.</div>
         <div class="stop-address">7655 Markham Rd Units C-1 & C-2, Markham, ON L3S 4S1</div>
         <span class="map-btn">📍 Open in Maps</span>
       </div>
@@ -455,7 +484,7 @@
       <div class="stop-body">
         <div class="stop-emoji">🎬</div>
         <div class="stop-name">The Truman Show — movie night</div>
-        <div class="stop-desc">Back to one of ours. 16th & 9th Line, Markham. We watch The Truman Show, or Wuthering Heights, or <em>Send Help</em> (2026) — aka that fuckass Dylan O'Brien movie you wanted to watch. Perfect ending either way.</div>
+        <div class="stop-desc">Back to our ends. 16th & 9th Line, Markham. We watch The Truman Show, or Wuthering Heights, or <em>Send Help</em> (2026) — aka that fuckass Dylan O'Brien movie you wanted to watch. Perfect ending either way.</div>
         <div class="stop-address">16th Ave & 9th Line, Markham, ON</div>
       </div>
     </div>
@@ -471,7 +500,7 @@
 
   <!-- Final note -->
   <div class="final-note">
-    <p>"some things are just worth writing down so they feel a little more real."</p>
+    <p>"tldr: I'm boooored lets hangout"</p>
     <div class="tiny">see you soon, Imaan 🤍</div>
   </div>
 
