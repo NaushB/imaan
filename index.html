@@ -6,6 +6,25 @@
 <title>Naush & Imaan's (2nd) Hangout aka Date</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <style>
+ /* --- Styling for the New Phone Deer Image --- */
+.phone-deer {
+  display: block;        /* Ensures it starts on a new line */
+  max-width: 150px;      /* Prevents it from getting too big on phones */
+  height: auto;          /* Maintains aspect ratio */
+  margin: 15px auto 0;   /* Centers it horizontally AND adds space (15px) above it */
+  opacity: 0.9;          /* Slightly softens the colors to look sophisticated */
+}
+
+/* Also styling the button from the previous step, just in case you don't have it */
+.play-button-style {
+  background: var(--rose);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-family: 'Lora', serif;
+  cursor: pointer;
+}
   * { margin: 0; padding: 0; box-sizing: border-box; }
  .deer-bg {
   position: fixed;
@@ -163,6 +182,20 @@
     animation: fadeUp 1s 0.9s ease both;
     margin-bottom: 8px;
   }
+
+ <div class="music-section">
+  <p class="music-label">press play for the vibe (aka the Imaan radio station) 🎵</p>
+  
+  <audio id="bg-music" loop>
+    <source src="song.mp3" type="audio/mpeg">
+  </audio>
+
+  <button id="play-btn" onclick="toggleMusic()" class="play-button-style">
+    ▶ Play Song
+  </button>
+
+  <img src="boombox.JPG" class="phone-deer" alt="Me asf rn">
+</div>
 
   .music-label {
     font-family: 'Lora', serif;
